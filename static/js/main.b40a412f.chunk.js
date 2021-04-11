@@ -12,9 +12,9 @@
         i = n(10),
         s = n(5),
         l = n(15),
-        d = n.n(l),
-        u = n(3),
-        b = Object(u.a)({
+        u = n.n(l),
+        d = n(3),
+        b = Object(d.a)({
           ContactItem: {
             display: 'flex',
             flexDirection: 'row',
@@ -56,7 +56,7 @@
             ],
           });
         },
-        m = Object(u.a)({
+        j = Object(d.a)({
           ContactsList: {
             padding: '20px',
             width: '450px',
@@ -65,10 +65,10 @@
             marginBottom: '20px',
           },
         }),
-        j = function (e) {
+        m = function (e) {
           var t = e.contacts,
             n = e.onDeleteContact,
-            o = m();
+            o = j();
           return Object(p.jsx)('ul', {
             className: o.ContactsList,
             children:
@@ -90,7 +90,7 @@
         },
         h = n(9),
         f = n(13),
-        O = Object(u.a)({
+        O = Object(d.a)({
           Phonebook: {
             width: '450px',
             border: '2px solid black',
@@ -134,8 +134,8 @@
             c = a[0],
             i = a[1],
             l = c.name,
-            d = c.number,
-            u = function (e) {
+            u = c.number,
+            d = function (e) {
               var t = e.currentTarget,
                 n = t.name,
                 o = t.value;
@@ -146,7 +146,7 @@
               e.preventDefault(),
                 Object.values(c).some(function (e) {
                   return !e;
-                }) || (t(l, d), i(g), e.currentTarget.reset());
+                }) || (t(l, u), i(g), e.currentTarget.reset());
             },
             className: n.Phonebook,
             children: [
@@ -163,7 +163,7 @@
                       "\u0418\u043c\u044f \u043c\u043e\u0436\u0435\u0442 \u0441\u043e\u0441\u0442\u043e\u044f\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u0438\u0437 \u0431\u0443\u043a\u0432, \u0430\u043f\u043e\u0441\u0442\u0440\u043e\u0444\u0430, \u0442\u0438\u0440\u0435 \u0438 \u043f\u0440\u043e\u0431\u0435\u043b\u043e\u0432. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan \u0438 \u0442. \u043f.",
                     required: !0,
                     placeholder: 'Enter your name',
-                    onChange: u,
+                    onChange: d,
                   }),
                 ],
               }),
@@ -180,7 +180,7 @@
                       '\u041d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430 \u0434\u043e\u043b\u0436\u0435\u043d \u0441\u043e\u0441\u0442\u043e\u044f\u0442\u044c \u0438\u0437 11-12 \u0446\u0438\u0444\u0440 \u0438 \u043c\u043e\u0436\u0435\u0442 \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0446\u0438\u0444\u0440\u044b, \u043f\u0440\u043e\u0431\u0435\u043b\u044b, \u0442\u0438\u0440\u0435, \u043f\u0443\u0437\u0430\u0442\u044b\u0435 \u0441\u043a\u043e\u0431\u043a\u0438 \u0438 \u043c\u043e\u0436\u0435\u0442 \u043d\u0430\u0447\u0438\u043d\u0430\u0442\u044c\u0441\u044f \u0441 +',
                     required: !0,
                     placeholder: 'Enter your phone number',
-                    onChange: u,
+                    onChange: d,
                   }),
                 ],
               }),
@@ -191,7 +191,7 @@
             ],
           });
         },
-        v = Object(u.a)({
+        v = Object(d.a)({
           Filter: {
             display: 'flex',
             justifyContent: 'space-between',
@@ -223,21 +223,15 @@
         };
       k.defaultProps = { value: '' };
       var w = k,
-        N = [
-          { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56699' },
-          { id: 'id-2', name: 'Hermione Kline', number: '443-89-12699' },
-          { id: 'id-3', name: 'Eden Clements', number: '645-17-79151' },
-          { id: 'id-4', name: 'Annie Copeland', number: '227-91-2612' },
-        ],
-        S = function () {
-          var e = Object(o.useState)(N),
+        N = function () {
+          var e = Object(o.useState)([]),
             t = Object(s.a)(e, 2),
             n = t[0],
             r = t[1],
             a = Object(o.useState)(''),
             c = Object(s.a)(a, 2),
             l = c[0],
-            u = c[1];
+            d = c[1];
           Object(o.useEffect)(function () {
             var e = JSON.parse(localStorage.getItem('contacts'));
             r(e);
@@ -264,7 +258,7 @@
                   )
                     alert(''.concat(e, ' is already in contacts'));
                   else {
-                    var o = { id: d.a.generate(), name: e, number: t };
+                    var o = { id: u.a.generate(), name: e, number: t };
                     r(function (e) {
                       return [o].concat(Object(i.a)(e));
                     });
@@ -275,10 +269,10 @@
               Object(p.jsx)(w, {
                 value: l,
                 onChange: function (e) {
-                  u(e.currentTarget.value);
+                  d(e.currentTarget.value);
                 },
               }),
-              Object(p.jsx)(j, {
+              Object(p.jsx)(m, {
                 contacts: x,
                 onDeleteContact: function (e) {
                   r(function (t) {
@@ -291,7 +285,7 @@
             ],
           });
         },
-        y = Object(u.a)({
+        y = Object(d.a)({
           Container: {
             maxWidth: '1200px',
             margin: '0 auto',
@@ -309,25 +303,25 @@
             },
           },
         }),
-        B = function (e) {
+        S = function (e) {
           var t = e.children,
             n = y();
           return Object(p.jsx)('div', { className: n.Container, children: t });
         },
-        I = function (e) {
+        B = function (e) {
           var t = e.children;
-          return Object(p.jsx)(B, { children: t });
+          return Object(p.jsx)(S, { children: t });
         };
-      var z = function () {
-        return Object(p.jsx)(I, { children: Object(p.jsx)(S, {}) });
+      var I = function () {
+        return Object(p.jsx)(B, { children: Object(p.jsx)(N, {}) });
       };
       n(37), n(38);
       c.a.render(
-        Object(p.jsx)(r.a.StrictMode, { children: Object(p.jsx)(z, {}) }),
+        Object(p.jsx)(r.a.StrictMode, { children: Object(p.jsx)(I, {}) }),
         document.getElementById('root'),
       );
     },
   },
   [[39, 1, 2]],
 ]);
-//# sourceMappingURL=main.89cc46ed.chunk.js.map
+//# sourceMappingURL=main.b40a412f.chunk.js.map
