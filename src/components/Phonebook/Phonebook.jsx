@@ -5,15 +5,15 @@ import ContactsList from '../ContactsList';
 import ContactForm from '../ContactForm/';
 import Filter from '../Filter';
 
-const initialContacts = [
-  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56699' },
-  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12699' },
-  { id: 'id-3', name: 'Eden Clements', number: '645-17-79151' },
-  { id: 'id-4', name: 'Annie Copeland', number: '227-91-2612' },
-];
+// const initialContacts = [
+//   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56699' },
+//   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12699' },
+//   { id: 'id-3', name: 'Eden Clements', number: '645-17-79151' },
+//   { id: 'id-4', name: 'Annie Copeland', number: '227-91-2612' },
+// ];
 
 const Phonebook = () => {
-  const [contacts, setContacts] = useState(initialContacts);
+  const [contacts, setContacts] = useState([]);
   const [filter, setFilter] = useState('');
 
   const handleAddContact = (name, number) => {
@@ -54,6 +54,7 @@ const Phonebook = () => {
   const filteredContacts = contacts.filter(({ name }) =>
     name.toLowerCase().includes(normalizedFilter),
   );
+
   return (
     <>
       <h2>Phonebook</h2>
